@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -149,7 +150,8 @@
         }
 
         /* Lists */
-        ul, ol {
+        ul,
+        ol {
             margin: 1rem 0 1rem 2rem;
         }
 
@@ -188,7 +190,8 @@
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
-        th, td {
+        th,
+        td {
             border: 1px solid var(--border-color);
             padding: 0.75rem;
             text-align: left;
@@ -261,6 +264,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <!-- Sidebar -->
@@ -297,36 +301,44 @@
 
             <section id="introduccion">
                 <h2>Introducción</h2>
-                <p><strong>Vision-Attendance</strong> es un sistema de control de asistencia basado en reconocimiento facial. Esta aplicación permite automatizar el registro de asistencia mediante la identificación de personas utilizando una cámara y algoritmos de reconocimiento facial, eliminando la necesidad de métodos tradicionales como listas en papel o tarjetas de identificación.</p>
-                
-                <p><strong>Propósito del Sistema:</strong> Proveer un método eficiente, preciso y moderno para registrar la asistencia en entornos educativos o laborales mediante tecnología de reconocimiento facial.</p>
-                
+                <p><strong>Vision-Attendance</strong> es un sistema de control de asistencia basado en reconocimiento
+                    facial. Esta aplicación permite automatizar el registro de asistencia mediante la identificación de
+                    personas utilizando una cámara y algoritmos de reconocimiento facial, eliminando la necesidad de
+                    métodos tradicionales como listas en papel o tarjetas de identificación.</p>
+
+                <p><strong>Propósito del Sistema:</strong> Proveer un método eficiente, preciso y moderno para registrar
+                    la asistencia en entornos educativos o laborales mediante tecnología de reconocimiento facial.</p>
+
                 <h3>Componentes Principales</h3>
                 <ul>
-                    <li><strong>Backend:</strong> Servidor que gestiona la lógica de negocio, procesa las imágenes, realiza el reconocimiento facial y almacena los datos.</li>
-                    <li><strong>Frontend:</strong> Interfaz de usuario para administrar personas, visualizar asistencias y controlar el sistema.</li>
+                    <li><strong>Backend:</strong> Servidor que gestiona la lógica de negocio, procesa las imágenes,
+                        realiza el reconocimiento facial y almacena los datos.</li>
+                    <li><strong>Frontend:</strong> Interfaz de usuario para administrar personas, visualizar asistencias
+                        y controlar el sistema.</li>
                 </ul>
             </section>
 
             <section id="vision-general-de-la-arquitectura">
                 <h2>Visión General de la Arquitectura</h2>
-                <p>El backend de Vision-Attendance está construido siguiendo una <strong>arquitectura modular</strong> que separa las responsabilidades en componentes claramente definidos. Este diseño facilita el mantenimiento, escalabilidad y comprensión del sistema.</p>
-                
+                <p>El backend de Vision-Attendance está construido siguiendo una <strong>arquitectura modular</strong>
+                    que separa las responsabilidades en componentes claramente definidos. Este diseño facilita el
+                    mantenimiento, escalabilidad y comprensión del sistema.</p>
+
                 <h3>Diagrama de Alto Nivel</h3>
-                <div class="diagram">┌───────────────────┐     ┌───────────────────────────┐     ┌───────────────────┐
-│                   │     │                           │     │                   │
-│     Frontend      │◄────┤       Backend API         │◄────┤   Base de Datos   │
-│     (React)       │     │       (FastAPI)           │     │    (MongoDB)      │
-│                   │     │                           │     │                   │
-└───────────────────┘     └───────────────────────────┘     └───────────────────┘
-                                      │
-                          ┌───────────┴───────────┐
-                          │                       │
-                          │   Sistema de Visión   │
-                          │      Computacional    │
-                          │                       │
-                          └───────────────────────┘</div>
-                
+                <div class="diagram">┌───────────────────┐ ┌───────────────────────────┐ ┌───────────────────┐
+                    │ │ │ │ │ │
+                    │ Frontend │◄────┤ Backend API │◄────┤ Base de Datos │
+                    │ (React) │ │ (FastAPI) │ │ (MongoDB) │
+                    │ │ │ │ │ │
+                    └───────────────────┘ └───────────────────────────┘ └───────────────────┘
+                    │
+                    ┌───────────┴───────────┐
+                    │ │
+                    │ Sistema de Visión │
+                    │ Computacional │
+                    │ │
+                    └───────────────────────┘</div>
+
                 <h3>Flujo de Datos</h3>
                 <ol>
                     <li>La cámara captura imágenes de las personas.</li>
@@ -339,8 +351,9 @@
             <section id="tecnologias-utilizadas">
                 <h2>Tecnologías Utilizadas</h2>
                 <p>El backend de Vision-Attendance está construido sobre un stack tecnológico moderno y potente:</p>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 2rem 0;">
+
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 2rem 0;">
                     <div style="padding: 1rem; border: 1px solid var(--border-color); border-radius: 0.5rem;">
                         <strong>FastAPI</strong><br>
                         Framework web de Python que facilita la creación de APIs RESTful de alto rendimiento.
@@ -355,7 +368,8 @@
                     </div>
                     <div style="padding: 1rem; border: 1px solid var(--border-color); border-radius: 0.5rem;">
                         <strong>OpenCV</strong><br>
-                        Biblioteca de visión por computadora utilizada para procesamiento de imágenes y detección facial.
+                        Biblioteca de visión por computadora utilizada para procesamiento de imágenes y detección
+                        facial.
                     </div>
                     <div style="padding: 1rem; border: 1px solid var(--border-color); border-radius: 0.5rem;">
                         <strong>Pydantic</strong><br>
@@ -371,7 +385,7 @@
             <section id="estructura-del-proyecto">
                 <h2>Estructura del Proyecto</h2>
                 <p>El backend sigue una estructura organizada por módulos funcionales:</p>
-                
+
                 <pre><code>backend/
 ├── app/
 │   ├── core/               # Configuraciones centrales del sistema
@@ -389,8 +403,9 @@
 
             <section id="configuracion-del-sistema">
                 <h2>Configuración del Sistema</h2>
-                <p>El sistema utiliza variables de entorno para su configuración, lo que permite modificar el comportamiento sin cambiar el código.</p>
-                
+                <p>El sistema utiliza variables de entorno para su configuración, lo que permite modificar el
+                    comportamiento sin cambiar el código.</p>
+
                 <h3>Variables de entorno principales</h3>
                 <table>
                     <thead>
@@ -401,35 +416,76 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>MONGODB_URI</td><td>URL de conexión a MongoDB</td><td>mongodb://localhost:27017</td></tr>
-                        <tr><td>DB_NAME</td><td>Nombre de la base de datos</td><td>attendance_db</td></tr>
-                        <tr><td>MEDIA_ROOT</td><td>Directorio para almacenar archivos estáticos</td><td>app/static</td></tr>
-                        <tr><td>DEVICE_ID</td><td>Identificador del dispositivo de captura</td><td>default</td></tr>
-                        <tr><td>DEVICE_TYPE</td><td>Tipo de dispositivo (webcam/rtsp)</td><td>webcam</td></tr>
-                        <tr><td>DEVICE_WIDTH</td><td>Ancho de captura de la cámara</td><td>640</td></tr>
-                        <tr><td>DEVICE_HEIGHT</td><td>Alto de captura de la cámara</td><td>480</td></tr>
-                        <tr><td>DEVICE_FPS</td><td>Fotogramas por segundo</td><td>30</td></tr>
-                        <tr><td>DEBOUNCE_SECONDS</td><td>Tiempo mínimo entre registros de asistencia</td><td>300</td></tr>
+                        <tr>
+                            <td>MONGODB_URI</td>
+                            <td>URL de conexión a MongoDB</td>
+                            <td>mongodb://localhost:27017</td>
+                        </tr>
+                        <tr>
+                            <td>DB_NAME</td>
+                            <td>Nombre de la base de datos</td>
+                            <td>attendance_db</td>
+                        </tr>
+                        <tr>
+                            <td>MEDIA_ROOT</td>
+                            <td>Directorio para almacenar archivos estáticos</td>
+                            <td>app/static</td>
+                        </tr>
+                        <tr>
+                            <td>DEVICE_ID</td>
+                            <td>Identificador del dispositivo de captura</td>
+                            <td>default</td>
+                        </tr>
+                        <tr>
+                            <td>DEVICE_TYPE</td>
+                            <td>Tipo de dispositivo (webcam/rtsp)</td>
+                            <td>webcam</td>
+                        </tr>
+                        <tr>
+                            <td>DEVICE_WIDTH</td>
+                            <td>Ancho de captura de la cámara</td>
+                            <td>640</td>
+                        </tr>
+                        <tr>
+                            <td>DEVICE_HEIGHT</td>
+                            <td>Alto de captura de la cámara</td>
+                            <td>480</td>
+                        </tr>
+                        <tr>
+                            <td>DEVICE_FPS</td>
+                            <td>Fotogramas por segundo</td>
+                            <td>30</td>
+                        </tr>
+                        <tr>
+                            <td>DEBOUNCE_SECONDS</td>
+                            <td>Tiempo mínimo entre registros de asistencia</td>
+                            <td>300</td>
+                        </tr>
                     </tbody>
                 </table>
-                
-                <p>Para configurar el sistema, copia <code>.env.example</code> a <code>.env</code> y modifica los valores según necesites.</p>
+
+                <p>Para configurar el sistema, copia <code>.env.example</code> a <code>.env</code> y modifica los
+                    valores según necesites.</p>
             </section>
 
             <section id="modulos-principales">
                 <h2>Módulos Principales</h2>
-                
+
                 <section id="modulo-de-personas">
                     <h3>Módulo de Personas</h3>
-                    <p>Este módulo gestiona la información de todas las personas que serán reconocidas por el sistema.</p>
-                    
+                    <p>Este módulo gestiona la información de todas las personas que serán reconocidas por el sistema.
+                    </p>
+
                     <h4>Funcionalidades principales</h4>
                     <ul>
-                        <li><strong>Registro de personas:</strong> Almacena datos básicos como nombre, email, grado y grupo.</li>
-                        <li><strong>Gestión de fotografías:</strong> Permite asociar una imagen facial a cada persona para su posterior reconocimiento.</li>
-                        <li><strong>CRUD completo:</strong> Crear, leer, actualizar y eliminar registros de personas.</li>
+                        <li><strong>Registro de personas:</strong> Almacena datos básicos como nombre, email, grado y
+                            grupo.</li>
+                        <li><strong>Gestión de fotografías:</strong> Permite asociar una imagen facial a cada persona
+                            para su posterior reconocimiento.</li>
+                        <li><strong>CRUD completo:</strong> Crear, leer, actualizar y eliminar registros de personas.
+                        </li>
                     </ul>
-                    
+
                     <h4>Estructura del módulo</h4>
                     <pre><code>people/
 ├── __init__.py
@@ -438,22 +494,62 @@
 ├── schemas.py       # Modelos de datos y validación
 ├── service.py       # Lógica de negocio
 └── storage.py       # Gestión de almacenamiento de fotos</code></pre>
-                    
+
                     <h4>Modelo de datos de una Persona</h4>
                     <table>
                         <thead>
-                            <tr><th>Campo</th><th>Tipo</th><th>Descripción</th></tr>
+                            <tr>
+                                <th>Campo</th>
+                                <th>Tipo</th>
+                                <th>Descripción</th>
+                            </tr>
                         </thead>
                         <tbody>
-                            <tr><td>id</td><td>string</td><td>Identificador único</td></tr>
-                            <tr><td>full_name</td><td>string</td><td>Nombre completo</td></tr>
-                            <tr><td>email</td><td>string (opcional)</td><td>Correo electrónico</td></tr>
-                            <tr><td>grade</td><td>string (opcional)</td><td>Grado o curso</td></tr>
-                            <tr><td>group</td><td>string (opcional)</td><td>Grupo o división</td></tr>
-                            <tr><td>has_photo</td><td>boolean</td><td>Indica si tiene foto asociada</td></tr>
-                            <tr><td>photo_url</td><td>string (opcional)</td><td>URL relativa de la foto</td></tr>
-                            <tr><td>created_at</td><td>datetime</td><td>Fecha de creación</td></tr>
-                            <tr><td>updated_at</td><td>datetime</td><td>Fecha de última actualización</td></tr>
+                            <tr>
+                                <td>id</td>
+                                <td>string</td>
+                                <td>Identificador único</td>
+                            </tr>
+                            <tr>
+                                <td>full_name</td>
+                                <td>string</td>
+                                <td>Nombre completo</td>
+                            </tr>
+                            <tr>
+                                <td>email</td>
+                                <td>string (opcional)</td>
+                                <td>Correo electrónico</td>
+                            </tr>
+                            <tr>
+                                <td>grade</td>
+                                <td>string (opcional)</td>
+                                <td>Grado o curso</td>
+                            </tr>
+                            <tr>
+                                <td>group</td>
+                                <td>string (opcional)</td>
+                                <td>Grupo o división</td>
+                            </tr>
+                            <tr>
+                                <td>has_photo</td>
+                                <td>boolean</td>
+                                <td>Indica si tiene foto asociada</td>
+                            </tr>
+                            <tr>
+                                <td>photo_url</td>
+                                <td>string (opcional)</td>
+                                <td>URL relativa de la foto</td>
+                            </tr>
+                            <tr>
+                                <td>created_at</td>
+                                <td>datetime</td>
+                                <td>Fecha de creación</td>
+                            </tr>
+                            <tr>
+                                <td>updated_at</td>
+                                <td>datetime</td>
+                                <td>Fecha de última actualización</td>
+                            </tr>
                         </tbody>
                     </table>
                 </section>
@@ -461,15 +557,19 @@
                 <section id="modulo-de-asistencias">
                     <h3>Módulo de Asistencias</h3>
                     <p>Este módulo maneja el proceso de detección facial y registro de asistencias.</p>
-                    
+
                     <h4>Funcionalidades principales</h4>
                     <ul>
-                        <li><strong>Detección facial:</strong> Identifica rostros en tiempo real mediante la cámara.</li>
-                        <li><strong>Reconocimiento facial:</strong> Compara los rostros detectados con la base de datos de personas.</li>
-                        <li><strong>Registro de asistencias:</strong> Almacena automáticamente la fecha y hora cuando una persona es reconocida.</li>
-                        <li><strong>Consulta de asistencias:</strong> Permite filtrar y visualizar los registros de asistencia.</li>
+                        <li><strong>Detección facial:</strong> Identifica rostros en tiempo real mediante la cámara.
+                        </li>
+                        <li><strong>Reconocimiento facial:</strong> Compara los rostros detectados con la base de datos
+                            de personas.</li>
+                        <li><strong>Registro de asistencias:</strong> Almacena automáticamente la fecha y hora cuando
+                            una persona es reconocida.</li>
+                        <li><strong>Consulta de asistencias:</strong> Permite filtrar y visualizar los registros de
+                            asistencia.</li>
                     </ul>
-                    
+
                     <h4>Estructura del módulo</h4>
                     <pre><code>attendances/
 ├── __init__.py
@@ -481,33 +581,55 @@
 ├── schema.py           # Modelos de datos y validación
 ├── service.py          # Lógica de negocio
 └── video_capture.py    # Gestión de captura de video</code></pre>
-                    
+
                     <h4>Modelo de datos de una Asistencia</h4>
                     <table>
                         <thead>
-                            <tr><th>Campo</th><th>Tipo</th><th>Descripción</th></tr>
+                            <tr>
+                                <th>Campo</th>
+                                <th>Tipo</th>
+                                <th>Descripción</th>
+                            </tr>
                         </thead>
                         <tbody>
-                            <tr><td>id</td><td>string</td><td>Identificador único</td></tr>
-                            <tr><td>person_id</td><td>string</td><td>ID de la persona reconocida</td></tr>
-                            <tr><td>attendance_time</td><td>datetime</td><td>Momento exacto del registro</td></tr>
+                            <tr>
+                                <td>id</td>
+                                <td>string</td>
+                                <td>Identificador único</td>
+                            </tr>
+                            <tr>
+                                <td>person_id</td>
+                                <td>string</td>
+                                <td>ID de la persona reconocida</td>
+                            </tr>
+                            <tr>
+                                <td>attendance_time</td>
+                                <td>datetime</td>
+                                <td>Momento exacto del registro</td>
+                            </tr>
                         </tbody>
                     </table>
                 </section>
 
                 <section id="sistema-de-deteccion-facial">
                     <h3>Sistema de Detección Facial</h3>
-                    <p>El corazón del sistema Vision-Attendance es su capacidad de detectar y reconocer rostros automáticamente.</p>
-                    
+                    <p>El corazón del sistema Vision-Attendance es su capacidad de detectar y reconocer rostros
+                        automáticamente.</p>
+
                     <h4>Componentes clave</h4>
                     <ul>
-                        <li><strong>Captura de video:</strong> Gestiona la conexión con la cámara y obtiene fotogramas en tiempo real.</li>
-                        <li><strong>Detector facial:</strong> Identifica la presencia y ubicación de rostros humanos en las imágenes.</li>
-                        <li><strong>Extractor de características:</strong> Obtiene información distintiva de cada rostro detectado.</li>
-                        <li><strong>Comparador facial:</strong> Compara los rostros detectados con la base de datos de personas registradas.</li>
-                        <li><strong>Gestor de debounce:</strong> Evita registros múltiples de la misma persona en un corto período de tiempo.</li>
+                        <li><strong>Captura de video:</strong> Gestiona la conexión con la cámara y obtiene fotogramas
+                            en tiempo real.</li>
+                        <li><strong>Detector facial:</strong> Identifica la presencia y ubicación de rostros humanos en
+                            las imágenes.</li>
+                        <li><strong>Extractor de características:</strong> Obtiene información distintiva de cada rostro
+                            detectado.</li>
+                        <li><strong>Comparador facial:</strong> Compara los rostros detectados con la base de datos de
+                            personas registradas.</li>
+                        <li><strong>Gestor de debounce:</strong> Evita registros múltiples de la misma persona en un
+                            corto período de tiempo.</li>
                     </ul>
-                    
+
                     <h4>Flujo del proceso de detección</h4>
                     <ol>
                         <li>Captura continua de imágenes desde la cámara.</li>
@@ -522,7 +644,7 @@
 
             <section id="flujos-de-trabajo">
                 <h2>Flujos de Trabajo</h2>
-                
+
                 <h3>1. Registro de Personas</h3>
                 <p><strong>Descripción:</strong> Proceso para añadir nuevas personas al sistema.</p>
                 <h4>Pasos:</h4>
@@ -555,7 +677,7 @@ photo: [archivo binario]</code></pre>
 
                 <h3>3. Gestión de Fotografías</h3>
                 <p><strong>Descripción:</strong> Agregar, actualizar o eliminar la foto de una persona.</p>
-                
+
                 <h4>Pasos para agregar/actualizar:</h4>
                 <ol>
                     <li>Acceder al endpoint <code>/people/{person_id}/photo</code> con método PUT.</li>
@@ -564,7 +686,7 @@ photo: [archivo binario]</code></pre>
                     <li>Si la persona ya tenía foto, se elimina la anterior.</li>
                     <li>Se guarda la nueva imagen y se actualiza la referencia.</li>
                 </ol>
-                
+
                 <h4>Pasos para eliminar:</h4>
                 <ol>
                     <li>Acceder al endpoint <code>/people/{person_id}/photo</code> con método DELETE.</li>
@@ -573,7 +695,8 @@ photo: [archivo binario]</code></pre>
                 </ol>
 
                 <h3>4. Iniciar Detección de Asistencias</h3>
-                <p><strong>Descripción:</strong> Activa el sistema de reconocimiento facial para registrar asistencias.</p>
+                <p><strong>Descripción:</strong> Activa el sistema de reconocimiento facial para registrar asistencias.
+                </p>
                 <h4>Pasos:</h4>
                 <ol>
                     <li>Acceder al endpoint <code>/attendances/start</code> con método POST.</li>
@@ -597,20 +720,22 @@ photo: [archivo binario]</code></pre>
             <section id="gestion-de-archivos-y-medios">
                 <h2>Gestión de Archivos y Medios</h2>
                 <p>El sistema almacena y gestiona fotografías de las personas para el reconocimiento facial.</p>
-                
+
                 <h3>Almacenamiento de imágenes</h3>
                 <ul>
-                    <li>Las fotos se guardan en el directorio especificado por <code>MEDIA_ROOT</code> (por defecto: <code>app/static</code>).</li>
+                    <li>Las fotos se guardan en el directorio especificado por <code>MEDIA_ROOT</code> (por defecto:
+                        <code>app/static</code>).</li>
                     <li>Cada imagen recibe un nombre único basado en el ID de la persona y un timestamp.</li>
-                    <li>Las imágenes se sirven a través del endpoint <code>/static/</code> para acceso desde el frontend.</li>
+                    <li>Las imágenes se sirven a través del endpoint <code>/static/</code> para acceso desde el
+                        frontend.</li>
                 </ul>
-                
+
                 <h3>Formatos soportados</h3>
                 <ul>
                     <li>JPEG (.jpg, .jpeg)</li>
                     <li>PNG (.png)</li>
                 </ul>
-                
+
                 <h3>Proceso de manipulación de imágenes</h3>
                 <ol>
                     <li>Al recibir una imagen, se valida su formato y tamaño.</li>
@@ -622,8 +747,262 @@ photo: [archivo binario]</code></pre>
 
             <section id="api-y-endpoints">
                 <h2>API y Endpoints</h2>
-                
+
                 <h3>Endpoints del Módulo de Personas</h3>
                 <table>
                     <thead>
-                        <tr><th>Método</th><th>Endpoint</th><th>Descripción
+                        <tr>
+                            <th>Método</th>
+                            <th>Endpoint</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>GET</td>
+                            <td>/people/</td>
+                            <td>Lista todas las personas registradas</td>
+                        </tr>
+                        <tr>
+                            <td>POST</td>
+                            <td>/people/</td>
+                            <td>Crea una nueva persona</td>
+                        </tr>
+                        <tr>
+                            <td>GET</td>
+                            <td>/people/{person_id}</td>
+                            <td>Obtiene una persona específica</td>
+                        </tr>
+                        <tr>
+                            <td>PUT</td>
+                            <td>/people/{person_id}</td>
+                            <td>Actualiza los datos de una persona</td>
+                        </tr>
+                        <tr>
+                            <td>PUT</td>
+                            <td>/people/{person_id}/photo</td>
+                            <td>Establece o actualiza la foto</td>
+                        </tr>
+                        <tr>
+                            <td>DELETE</td>
+                            <td>/people/{person_id}/photo</td>
+                            <td>Elimina la foto de una persona</td>
+                        </tr>
+                        <tr>
+                            <td>DELETE</td>
+                            <td>/people/{person_id}</td>
+                            <td>Elimina una persona y su foto</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Endpoints del Módulo de Asistencias</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Método</th>
+                            <th>Endpoint</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>GET</td>
+                            <td>/attendances/</td>
+                            <td>Lista las asistencias registradas</td>
+                        </tr>
+                        <tr>
+                            <td>POST</td>
+                            <td>/attendances/start</td>
+                            <td>Inicia el proceso de detección facial</td>
+                        </tr>
+                        <tr>
+                            <td>POST</td>
+                            <td>/attendances/stop</td>
+                            <td>Detiene el proceso de detección facial</td>
+                        </tr>
+                        <tr>
+                            <td>DELETE</td>
+                            <td>/attendances/{attendance_id}</td>
+                            <td>Elimina un registro de asistencia</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Endpoint de Estado</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Método</th>
+                            <th>Endpoint</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>GET</td>
+                            <td>/health</td>
+                            <td>Verifica el estado del sistema y su tiempo de actividad</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="base-de-datos">
+                <h2>Base de Datos</h2>
+                <p>Vision-Attendance utiliza MongoDB como sistema de base de datos, lo que permite un almacenamiento
+                    flexible y eficiente.</p>
+
+                <h3>Colecciones principales</h3>
+
+                <h4>1. people: Almacena la información de las personas registradas.</h4>
+                <p>Ejemplo de documento:</p>
+                <pre><code>{
+  "_id": "507f1f77bcf86cd799439011",
+  "full_name": "Juan Pérez",
+  "email": "juan@example.com",
+  "grade": "5to",
+  "group": "A",
+  "has_photo": true,
+  "photo_url": "/static/507f1f77bcf86cd799439011.jpg",
+  "created_at": "2023-05-01T12:00:00Z",
+  "updated_at": "2023-05-02T15:30:00Z"
+}</code></pre>
+
+                <h4>2. attendances: Registra las asistencias detectadas.</h4>
+                <p>Ejemplo de documento:</p>
+                <pre><code>{
+  "_id": "60a6c52e9f3779e8b51d0f7c",
+  "person_id": "507f1f77bcf86cd799439011",
+  "attendance_time": "2023-05-03T08:15:27Z"
+}</code></pre>
+
+                <h3>Índices optimizados</h3>
+                <ul>
+                    <li><code>people.full_name</code>: Para búsquedas por nombre.</li>
+                    <li><code>attendances.timestamp</code>: Para filtrado por fecha/hora.</li>
+                    <li><code>attendances.person_id</code>: Para consultas de asistencia por persona.</li>
+                </ul>
+            </section>
+
+            <section id="guia-de-integracion-con-frontend">
+                <h2>Guía de Integración con Frontend</h2>
+                <p>El backend proporciona una API RESTful completa que el frontend puede consumir. Aspectos clave para
+                    la integración:</p>
+
+                <h3>1. Autenticación</h3>
+                <p>Actualmente el sistema no implementa autenticación, lo que significa que todos los endpoints son
+                    accesibles públicamente. En un entorno de producción, se recomienda implementar algún mecanismo de
+                    autenticación.</p>
+
+                <h3>2. Formato de Respuestas</h3>
+                <p>Todas las respuestas exitosas siguen un formato JSON estándar. Los errores incluyen un código HTTP
+                    apropiado y un mensaje descriptivo.</p>
+
+                <h3>3. Carga de Archivos</h3>
+                <p>Para subir imágenes, el frontend debe enviar solicitudes como <code>multipart/form-data</code> con el
+                    campo <code>photo</code> conteniendo el archivo de imagen.</p>
+
+                <h3>4. URLs de Medios</h3>
+                <p>Las URLs de fotos devueltas por la API (campo <code>photo_url</code>) son relativas al backend. El
+                    frontend debe concatenar la URL base del backend para construir la URL completa.</p>
+
+                <h3>5. Manejo de Errores</h3>
+                <p>El backend devuelve códigos HTTP adecuados para diferentes situaciones:</p>
+                <ul>
+                    <li><span class="badge">200/201</span> Operación exitosa</li>
+                    <li><span class="badge">400</span> Datos inválidos o error de validación</li>
+                    <li><span class="badge">404</span> Recurso no encontrado</li>
+                    <li><span class="badge">500</span> Error interno del servidor</li>
+                </ul>
+
+                <h3>6. Monitoreo del Estado</h3>
+                <p>El endpoint <code>/health</code> puede utilizarse para verificar si el servicio está funcionando
+                    correctamente.</p>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.sidebar a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Highlight current section in navigation
+        function highlightCurrentSection() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.sidebar a[href^="#"]');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 60) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.fontWeight = 'normal';
+                link.style.color = 'var(--text-color)';
+                if (link.getAttribute('href') === '#' + current) {
+                    link.style.fontWeight = 'bold';
+                    link.style.color = 'var(--primary-color)';
+                }
+            });
+        }
+
+        window.addEventListener('scroll', highlightCurrentSection);
+        window.addEventListener('load', highlightCurrentSection);
+
+        // Mobile menu toggle (if needed)
+        const toggleButton = document.createElement('button');
+        toggleButton.innerHTML = '☰';
+        toggleButton.style.cssText = `
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 200;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: none;
+        `;
+
+        document.body.appendChild(toggleButton);
+
+        // Show toggle button on mobile
+        function checkMobile() {
+            if (window.innerWidth <= 768) {
+                toggleButton.style.display = 'block';
+                toggleButton.addEventListener('click', () => {
+                    const sidebar = document.querySelector('.sidebar');
+                    sidebar.classList.toggle('open');
+                });
+            } else {
+                toggleButton.style.display = 'none';
+                document.querySelector('.sidebar').classList.remove('open');
+            }
+        }
+
+        window.addEventListener('resize', checkMobile);
+        window.addEventListener('load', checkMobile);
+    </script>
+</body>
+
+</html>
